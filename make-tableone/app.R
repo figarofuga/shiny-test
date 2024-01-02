@@ -8,6 +8,9 @@
 #
 
 library(shiny)
+library(tableone)
+library(data.table)
+library(tidyverse)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(

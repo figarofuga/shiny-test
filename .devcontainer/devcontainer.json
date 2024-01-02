@@ -3,7 +3,7 @@
 {
 	"name": "R (rocker/r-ver base)",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4.2.3",
+	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4.2",
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {},
 		"ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {}
