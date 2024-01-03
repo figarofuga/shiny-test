@@ -5,15 +5,38 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4.2",
 	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+
+		},
 		"ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {},
 		"ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {}
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"reditorsupport.r", 
+				"vscode-icons-team.vscode-icons", 
+				"github.copilot" 
+			]
+		}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"postAttachCommand": {
+		"rstudio-start": "rserver"
+	},
+
+	"forwardPorts": [
+		8787
+	],
+
+	"portsAttributes": {
+		"8787": {
+			"label": "Rstudio IDE"
+		}
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "R -q -e 'renv::install()'",
